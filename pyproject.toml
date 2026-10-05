@@ -1,0 +1,7 @@
+[project]
+name = "dailygamebot"
+version = "0.1.0"
+description = "Bot to track daily game channels"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
