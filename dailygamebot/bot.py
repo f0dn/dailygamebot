@@ -22,7 +22,7 @@ def run(token: str):
                     - datetime.timedelta(seconds=5)
                 ):
                     count += 1
-                await channel.send("This is a recap message.")
+                await channel.send("count: " + str(count))
 
     @client.event
     async def on_ready():
