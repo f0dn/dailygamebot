@@ -1,8 +1,7 @@
-import asyncio
 import datetime
 
-import schedule
 from discord import Client, Intents, TextChannel
+from discord.ext import tasks
 
 
 def run(token: str):
@@ -13,7 +12,9 @@ def run(token: str):
 
     client = Client(intents=intents)
 
+    @tasks.loop(seconds=5)
     async def send_recap():
+        print("hello")
         for guild in client.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
@@ -32,11 +33,5 @@ def run(token: str):
                 if channel.name == "game-chat":
                     channels[guild.id] = channel
                     break
-
-        def run_async():
-            asyncio.run_coroutine_threadsafe(send_recap(), client.loop)
-
-        # schedule.every(1).day.at("00:00").do(send_recap, client)
-        schedule.every(5).seconds.do(run_async, client)
 
     client.run(token)
