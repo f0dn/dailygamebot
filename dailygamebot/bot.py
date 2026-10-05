@@ -1,7 +1,8 @@
 import datetime
 
-from discord import Client, Intents, TextChannel
+from discord import Client, Intents, Member, TextChannel, User
 from discord.ext import tasks
+from games import GAMES
 
 
 def run(token: str):
@@ -14,17 +15,26 @@ def run(token: str):
 
     @tasks.loop(seconds=5)
     async def send_recap():
-        print("hello")
         for guild in client.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
-                count = 0
+
+                scores: dict[str, dict[User | Member, int]] = {}
                 async for message in channel.history(
                     after=datetime.datetime.now(datetime.UTC)
                     - datetime.timedelta(seconds=5)
                 ):
-                    count += 1
-                await channel.send("count: " + str(count))
+                    for game in GAMES:
+                        score = game.parse_score(message.content)
+                        if score:
+                            if game.name not in scores:
+                                scores[game.name] = {}
+                            scores[game.name][message.author] = score
+                for game_name, game_scores in scores.items():
+                    message = f"Recap for {game_name}:\n"
+                    for user, score in game_scores.items():
+                        message += f"{user.display_name}: {score}\n"
+                    await channel.send(message)
 
     @client.event
     async def on_ready():
@@ -33,5 +43,7 @@ def run(token: str):
                 if channel.name == "game-chat":
                     channels[guild.id] = channel
                     break
+
+        send_recap.start()
 
     client.run(token)
