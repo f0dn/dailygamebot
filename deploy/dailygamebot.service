@@ -1,0 +1,21 @@
+[Unit]
+Description=DailyDameBot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=odin
+Group=odin
+
+WorkingDirectory=/opt/dailygamebot
+
+ExecStart=/opt/dailygamebot/.venv/bin/python /opt/dailygamebot/main.py
+
+Restart=on-failure
+RestartSec=5
+
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
