@@ -1,3 +1,4 @@
+import asyncio
 import datetime
 
 import schedule
@@ -32,7 +33,10 @@ def run(token: str):
                     channels[guild.id] = channel
                     break
 
+        def run_async():
+            asyncio.run_coroutine_threadsafe(send_recap(), client.loop)
+
         # schedule.every(1).day.at("00:00").do(send_recap, client)
-        schedule.every(5).seconds.do(send_recap, client)
+        schedule.every(5).seconds.do(run_async, client)
 
     client.run(token)
