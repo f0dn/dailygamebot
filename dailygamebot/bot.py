@@ -1,3 +1,5 @@
+import datetime
+
 import schedule
 from discord import Client, Intents, TextChannel
 
@@ -14,6 +16,12 @@ def run(token: str):
         for guild in client.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
+                count = 0
+                async for message in channel.history(
+                    after=datetime.datetime.now(datetime.UTC)
+                    - datetime.timedelta(seconds=5)
+                ):
+                    count += 1
                 await channel.send("This is a recap message.")
 
     @client.event
