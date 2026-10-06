@@ -16,6 +16,8 @@ class Game(ABC):
             int | None: The parsed score as an integer, or None if parsing fails.
         """
 
-from .krillion import Krillion
 
-GAMES = [Krillion()]
+from .krillion import Krillion
+from .timeguessr import TimeGuessr
+
+GAMES = [Krillion(), TimeGuessr()]
