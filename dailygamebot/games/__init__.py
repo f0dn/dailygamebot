@@ -16,5 +16,6 @@ class Game(ABC):
             int | None: The parsed score as an integer, or None if parsing fails.
         """
 
+from .krillion import Krillion
 
-GAMES: list[Game] = []
+GAMES = [Krillion()]

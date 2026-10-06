@@ -10,7 +10,10 @@ def main():
 
     token = os.getenv("DISCORD_TOKEN")
 
-    run(token)
+    if token:
+        run(token)
+    else:
+        print("Error: DISCORD_TOKEN not found in environment variables.")
 
 
 if __name__ == "__main__":

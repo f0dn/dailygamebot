@@ -2,7 +2,8 @@ import datetime
 
 from discord import Client, Intents, Member, TextChannel, User
 from discord.ext import tasks
-from games import GAMES
+
+from dailygamebot.games import GAMES
 
 
 def run(token: str):
