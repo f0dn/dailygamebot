@@ -47,7 +47,7 @@ def run(token: str):
                     for user, score in sorted(
                         game_scores.items(), key=lambda x: x[1], reverse=True
                     ):
-                        message += f"{user.mention}: {score}\n"
+                        message += f"{user.mention}: {score if score != -1 else 'X'}\n"
                     await channel.send(message)
 
     @client.event

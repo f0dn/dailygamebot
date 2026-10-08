@@ -29,9 +29,10 @@ class Game(ABC):
         return None
 
 
+from .duotrigordle import Duotrigordle
 from .krillion import Krillion
 from .maptap import MapTap
 from .sedecordle import Sedecordle
 from .timeguessr import TimeGuessr
 
-GAMES = [Krillion(), TimeGuessr(), Sedecordle(), MapTap()]
+GAMES = [Krillion(), TimeGuessr(), Sedecordle(), MapTap(), Duotrigordle()]
