@@ -25,6 +25,7 @@ def run(token: str):
                     after=datetime.datetime.now(datetime.UTC)
                     - datetime.timedelta(seconds=5)
                 ):
+                    print(message.content)
                     for game in GAMES:
                         score = game.parse_score(message.content)
                         if score:
