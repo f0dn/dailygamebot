@@ -1,9 +1,12 @@
 import datetime
+import logging
 
 from discord import Client, Intents, Member, TextChannel, User
 from discord.ext import tasks
 
 from dailygamebot.games import GAMES
+
+LOGGER = logging.getLogger(__name__)
 
 
 def run(token: str):
@@ -25,17 +28,26 @@ def run(token: str):
                     after=datetime.datetime.now(datetime.UTC)
                     - datetime.timedelta(seconds=5)
                 ):
-                    print(message.content)
+                    if message.author == client.user:
+                        continue
+                    LOGGER.info(
+                        f"Processing message from {message.author}: {message.content}"
+                    )
                     for game in GAMES:
                         score = game.parse_score(message.content)
                         if score:
+                            LOGGER.info(
+                                f"Found score for {game.name}: {score} from {message.author}"
+                            )
                             if game.name not in scores:
                                 scores[game.name] = {}
                             scores[game.name][message.author] = score
                 for game_name, game_scores in scores.items():
                     message = f"Recap for {game_name}:\n"
-                    for user, score in game_scores.items():
-                        message += f"{user.display_name}: {score}\n"
+                    for user, score in sorted(
+                        game_scores.items(), key=lambda x: x[1], reverse=True
+                    ):
+                        message += f"{user.mention}: {score}\n"
                     await channel.send(message)
 
     @client.event
