@@ -23,16 +23,17 @@ class Game(ABC):
         match = self.regex.match(message)
         if match:
             try:
-                return int(match.group(1))
+                return int(match.group(1).replace(",", ""))
             except ValueError:
                 return -1
         return None
 
 
+from .chainle import Chainle
 from .duotrigordle import Duotrigordle
 from .krillion import Krillion
 from .maptap import MapTap
 from .sedecordle import Sedecordle
 from .timeguessr import TimeGuessr
 
-GAMES = [Krillion(), TimeGuessr(), Sedecordle(), MapTap(), Duotrigordle()]
+GAMES = [Krillion(), TimeGuessr(), Sedecordle(), MapTap(), Duotrigordle(), Chainle()]
