@@ -30,10 +30,19 @@ class Game(ABC):
 
 
 from .chainle import Chainle
+from .dontwordle import DontWordle
 from .duotrigordle import Duotrigordle
 from .krillion import Krillion
 from .maptap import MapTap
 from .sedecordle import Sedecordle
 from .timeguessr import TimeGuessr
 
-GAMES = [Krillion(), TimeGuessr(), Sedecordle(), MapTap(), Duotrigordle(), Chainle()]
+GAMES = [
+    Krillion(),
+    TimeGuessr(),
+    Sedecordle(),
+    MapTap(),
+    Duotrigordle(),
+    Chainle(),
+    DontWordle(),
+]
