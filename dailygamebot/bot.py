@@ -1,5 +1,6 @@
 import datetime
 import logging
+from zoneinfo import ZoneInfo
 
 from discord import Client, Intents, Member, Message, TextChannel, User
 from discord.ext import tasks
@@ -8,7 +9,8 @@ from dailygamebot.games import GAMES, Game
 
 LOGGER = logging.getLogger(__name__)
 
-MIDNIGHT = datetime.time(hour=0, minute=0, second=0, tzinfo=datetime.UTC)
+TIMEZONE = ZoneInfo("America/New_York")
+MIDNIGHT = datetime.time(hour=0, minute=0, second=0, tzinfo=TIMEZONE)
 
 
 def run(token: str):
@@ -23,9 +25,9 @@ def run(token: str):
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
             after=datetime.datetime.combine(
-                datetime.datetime.now(datetime.UTC).date(),
+                datetime.datetime.now(TIMEZONE).date(),
                 datetime.time.min,
-                tzinfo=datetime.UTC,
+                tzinfo=TIMEZONE,
             )
         ):
             if message.author == client.user:
