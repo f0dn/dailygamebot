@@ -4,7 +4,7 @@ import logging
 from discord import Client, Intents, Member, TextChannel, User
 from discord.ext import tasks
 
-from dailygamebot.games import GAMES
+from dailygamebot.games import GAMES, Game
 
 LOGGER = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ def run(token: str):
             if guild.id in channels:
                 channel = channels[guild.id]
 
-                scores: dict[str, dict[User | Member, int]] = {}
+                scores: dict[Game, dict[User | Member, int]] = {}
                 async for message in channel.history(
                     after=datetime.datetime.now(datetime.UTC)
                     - datetime.timedelta(seconds=5)
@@ -39,13 +39,15 @@ def run(token: str):
                             LOGGER.info(
                                 f"Found score for {game.name}: {score} from {message.author}"
                             )
-                            if game.name not in scores:
-                                scores[game.name] = {}
+                            if game not in scores:
+                                scores[game] = {}
                             scores[game.name][message.author] = score
-                for game_name, game_scores in scores.items():
-                    message = f"Recap for {game_name}:\n"
+                for game, game_scores in scores.items():
+                    message = f"Recap for {game.name}:\n"
                     for user, score in sorted(
-                        game_scores.items(), key=lambda x: x[1], reverse=True
+                        game_scores.items(),
+                        key=lambda x: x[1],
+                        reverse=not game.reversed,
                     ):
                         message += f"{user.mention}: {score if score != -1 else 'X'}\n"
                     await channel.send(message)

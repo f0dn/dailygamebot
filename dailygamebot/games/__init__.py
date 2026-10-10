@@ -3,9 +3,10 @@ from re import Pattern
 
 
 class Game(ABC):
-    def __init__(self, name: str, regex: Pattern | None = None):
+    def __init__(self, name: str, regex: Pattern | None = None, reversed: bool = False):
         self.name = name
         self.regex = regex
+        self.reversed = reversed
 
     def parse_score(self, message: str) -> int | None:
         """
