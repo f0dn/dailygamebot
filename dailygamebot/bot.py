@@ -22,7 +22,11 @@ def run(token: str):
     async def recap(channel: TextChannel):
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
-            after=datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=1)
+            after=datetime.datetime.combine(
+                datetime.datetime.now(datetime.UTC).date(),
+                datetime.time.min,
+                tzinfo=datetime.UTC,
+            )
         ):
             if message.author == client.user:
                 continue
@@ -35,7 +39,7 @@ def run(token: str):
                     )
                     if game not in scores:
                         scores[game] = {}
-                    scores[game.name][message.author] = score
+                    scores[game][message.author] = score
         for game, game_scores in scores.items():
             message = f"Recap for {game.name}:\n"
             for user, score in sorted(
