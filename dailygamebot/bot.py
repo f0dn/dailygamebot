@@ -68,6 +68,7 @@ def run(token: str):
         if message.content.startswith("!recap") and message.channel == channels.get(
             message.guild.id
         ):
+            LOGGER.info(f"Recap requested by {message.author} in {message.guild.name}")
             channel = channels[message.guild.id]
             await recap(channel)
 
@@ -81,4 +82,4 @@ def run(token: str):
 
         send_recap.start()
 
-    client.run(token)
+    client.run(token, root_logger=True)
