@@ -1,12 +1,14 @@
 import datetime
 import logging
 
-from discord import Client, Intents, Member, TextChannel, User
+from discord import Client, Intents, Member, Message, TextChannel, User
 from discord.ext import tasks
 
 from dailygamebot.games import GAMES, Game
 
 LOGGER = logging.getLogger(__name__)
+
+MIDNIGHT = datetime.time(hour=0, minute=0, second=0, tzinfo=datetime.UTC)
 
 
 def run(token: str):
@@ -17,40 +19,53 @@ def run(token: str):
 
     client = Client(intents=intents)
 
-    @tasks.loop(seconds=5)
-    async def send_recap():
+    async def recap(channel: TextChannel):
+        scores: dict[Game, dict[User | Member, int]] = {}
+        async for message in channel.history(
+            after=datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=1)
+        ):
+            if message.author == client.user:
+                continue
+            LOGGER.info(f"Processing message from {message.author}: {message.content}")
+            for game in GAMES:
+                score = game.parse_score(message.content)
+                if score:
+                    LOGGER.info(
+                        f"Found score for {game.name}: {score} from {message.author}"
+                    )
+                    if game not in scores:
+                        scores[game] = {}
+                    scores[game.name][message.author] = score
+        for game, game_scores in scores.items():
+            message = f"Recap for {game.name}:\n"
+            for user, score in sorted(
+                game_scores.items(),
+                key=lambda x: x[1],
+                reverse=not game.reversed,
+            ):
+                message += f"{user.mention}: {score if score != -1 else 'X'}\n"
+            await channel.send(message)
+
+    @tasks.loop(time=MIDNIGHT)
+    async def send_recap(channel: TextChannel | None = None):
         for guild in client.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
+                await recap(channel)
 
-                scores: dict[Game, dict[User | Member, int]] = {}
-                async for message in channel.history(
-                    after=datetime.datetime.now(datetime.UTC)
-                    - datetime.timedelta(seconds=5)
-                ):
-                    if message.author == client.user:
-                        continue
-                    LOGGER.info(
-                        f"Processing message from {message.author}: {message.content}"
-                    )
-                    for game in GAMES:
-                        score = game.parse_score(message.content)
-                        if score:
-                            LOGGER.info(
-                                f"Found score for {game.name}: {score} from {message.author}"
-                            )
-                            if game not in scores:
-                                scores[game] = {}
-                            scores[game.name][message.author] = score
-                for game, game_scores in scores.items():
-                    message = f"Recap for {game.name}:\n"
-                    for user, score in sorted(
-                        game_scores.items(),
-                        key=lambda x: x[1],
-                        reverse=not game.reversed,
-                    ):
-                        message += f"{user.mention}: {score if score != -1 else 'X'}\n"
-                    await channel.send(message)
+    @client.event
+    async def on_message(message: Message):
+        if message.author == client.user:
+            return
+
+        if not message.guild:
+            return
+
+        if message.content.startswith("!recap") and message.channel == channels.get(
+            message.guild.id
+        ):
+            channel = channels[message.guild.id]
+            await recap(channel)
 
     @client.event
     async def on_ready():
