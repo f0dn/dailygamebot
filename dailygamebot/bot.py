@@ -10,7 +10,7 @@ from dailygamebot.games import GAMES, Game
 LOGGER = logging.getLogger(__name__)
 
 TIMEZONE = ZoneInfo("America/New_York")
-MIDNIGHT = datetime.time(hour=0, minute=0, second=0, tzinfo=TIMEZONE)
+MIDNIGHT = datetime.time(hour=23, minute=59, second=59, tzinfo=TIMEZONE)
 
 
 def run(token: str):
@@ -26,7 +26,7 @@ def run(token: str):
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
             after=datetime.datetime.combine(
-                datetime.datetime.now(TIMEZONE).date() - datetime.timedelta(days=1),
+                datetime.datetime.now(TIMEZONE).date(),
                 datetime.time.min,
                 tzinfo=TIMEZONE,
             ),
