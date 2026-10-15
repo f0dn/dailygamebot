@@ -7,3 +7,4 @@ class MapTap(Game):
     def __init__(self):
         self.name = "MapTap"
         self.regex = re.compile(r"www.maptap.gg .*\n.*\nFinal score: (\d+)")
+        self.url = "https://maptap.gg"

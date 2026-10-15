@@ -8,3 +8,4 @@ class Duotrigordle(Game):
         self.name = "Duotrigordle"
         self.regex = re.compile(r"Daily Duotrigordle #\d+\nGuesses: (\w+)/\d+")
         self.reversed = True
+        self.url = "https://duotrigordle.com"

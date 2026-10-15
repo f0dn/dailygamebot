@@ -2,7 +2,7 @@ import datetime
 import logging
 from zoneinfo import ZoneInfo
 
-from discord import Client, Intents, Member, Message, TextChannel, User
+from discord import Client, Embed, Intents, Member, Message, TextChannel, User
 from discord.ext import tasks
 
 from dailygamebot.games import GAMES, Game
@@ -44,7 +44,10 @@ def run(token: str):
                         scores[game] = {}
                     scores[game][message.author] = score
         for game, game_scores in scores.items():
-            message = f"Recap for {game.name}:\n"
+            game_name = game.name
+            if game.url:
+                game_name = f"[{game.name}]({game.url})"
+            message = f"Recap for {game_name}:\n"
             for user, score in sorted(
                 game_scores.items(),
                 key=lambda x: x[1],
@@ -52,7 +55,7 @@ def run(token: str):
             ):
                 message += f"{user.mention}: {score if score != -1 else 'X'}\n"
             LOGGER.info(f"Sending recap message to {channel.guild.name}: {message}")
-            await channel.send(message)
+            await channel.send(embed=Embed(description=message))
 
     @tasks.loop(time=MIDNIGHT)
     async def send_recap(channel: TextChannel | None = None):

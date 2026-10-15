@@ -8,3 +8,4 @@ class Sedecordle(Game):
         self.name = "Sedecordle"
         self.regex = re.compile(r"Daily Sedecordle #\d+\nGuesses: (\w+)/\d+")
         self.reversed = True
+        self.url = "https://sedecordle.co"

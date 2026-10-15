@@ -6,6 +6,7 @@ class Game(ABC):
     name: str
     regex: Pattern | None
     reversed: bool = False
+    url: str | None = None
 
     def parse_score(self, message: str) -> int | None:
         """
