@@ -26,7 +26,7 @@ def run(token: str):
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
             after=datetime.datetime.combine(
-                datetime.datetime.now(TIMEZONE).date(),
+                datetime.datetime.now(TIMEZONE).date() - datetime.timedelta(days=1),
                 datetime.time.min,
                 tzinfo=TIMEZONE,
             ),
