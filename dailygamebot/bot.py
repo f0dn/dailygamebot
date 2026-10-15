@@ -85,6 +85,7 @@ def run(token: str):
         for guild in client.guilds:
             for channel in guild.text_channels:
                 if channel.name == "game-chat":
+                    LOGGER.info(f"Found game-chat channel in {guild.name}: {channel.name}")
                     channels[guild.id] = channel
                     break
 
