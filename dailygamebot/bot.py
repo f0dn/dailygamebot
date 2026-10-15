@@ -22,6 +22,7 @@ def run(token: str):
     client = Client(intents=intents)
 
     async def recap(channel: TextChannel):
+        LOGGER.info(f"Starting recap task for {channel.guild.name}")
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
             after=datetime.datetime.combine(
@@ -50,10 +51,12 @@ def run(token: str):
                 reverse=not game.reversed,
             ):
                 message += f"{user.mention}: {score if score != -1 else 'X'}\n"
+            LOGGER.info(f"Sending recap message to {channel.guild.name}: {message}")
             await channel.send(message)
 
     @tasks.loop(time=MIDNIGHT)
     async def send_recap(channel: TextChannel | None = None):
+        LOGGER.info("Starting daily recap task")
         for guild in client.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
