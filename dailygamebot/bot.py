@@ -29,7 +29,8 @@ def run(token: str):
                 datetime.datetime.now(TIMEZONE).date(),
                 datetime.time.min,
                 tzinfo=TIMEZONE,
-            )
+            ),
+            limit=None,
         ):
             if message.author == client.user:
                 continue
@@ -85,7 +86,9 @@ def run(token: str):
         for guild in client.guilds:
             for channel in guild.text_channels:
                 if channel.name == "game-chat":
-                    LOGGER.info(f"Found game-chat channel in {guild.name}: {channel.name}")
+                    LOGGER.info(
+                        f"Found game-chat channel in {guild.name}: {channel.name}"
+                    )
                     channels[guild.id] = channel
                     break
 
