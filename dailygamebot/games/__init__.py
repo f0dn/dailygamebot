@@ -35,6 +35,7 @@ from .dontwordle import DontWordle
 from .duotrigordle import Duotrigordle
 from .krillion import Krillion
 from .maptap import MapTap
+from .noillirk import Noillirk
 from .sedecordle import Sedecordle
 from .timeguessr import TimeGuessr
 
@@ -46,4 +47,5 @@ GAMES = [
     Duotrigordle(),
     Chainle(),
     DontWordle(),
+    Noillirk(),
 ]
