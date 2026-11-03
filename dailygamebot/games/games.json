@@ -35,5 +35,10 @@
         "name": "TimeGuessr",
         "regex": "TimeGuessr #\\d+ — ([\\d,]+)/50,000",
         "url": "https://timeguessr.com"
+    },
+    {
+        "name": "Perceptle",
+        "regex": "Perceptle #\\d+ - . \\((\\d+)\\)",
+        "url": "https://perceptle.com"
     }
 ]

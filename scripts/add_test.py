@@ -23,7 +23,7 @@ def add_case(message: str, game: Game, score: int):
 
 def add_test():
     print("Paste message:")
-    message = sys.stdin.read()
+    message = sys.stdin.read().rstrip()
 
     matched = False
     for game in GAMES:

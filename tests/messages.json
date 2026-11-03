@@ -53,5 +53,15 @@
         "message": "TimeGuessr #1252 \u2014 39,935/50,000\n\n1\ufe0f\u20e3 \ud83c\udfc69,749 \u00b7 \ud83d\udcc5 0y \u00b7 \ud83c\udf0d 29.3mi\n2\ufe0f\u20e3 \ud83c\udfc69,474 \u00b7 \ud83d\udcc5 4y \u00b7 \ud83c\udf0d 4211ft\n3\ufe0f\u20e3 \ud83c\udfc65,056 \u00b7 \ud83d\udcc5 16y \u00b7 \ud83c\udf0d 503.0mi\n4\ufe0f\u20e3 \ud83c\udfc69,259 \u00b7 \ud83d\udcc5 5y \u00b7 \ud83c\udf0d 191ft\n5\ufe0f\u20e3 \ud83c\udfc66,397 \u00b7 \ud83d\udcc5 19y \u00b7 \ud83c\udf0d 4951ft\n\nhttps://timeguessr.com",
         "expected_game": "TimeGuessr",
         "expected_data": 39935
+    },
+    {
+        "message": "Perceptle #109 - B (77)\n\ud83d\udd22 55  \ud83c\udfaf 100  \ud83d\udcd0 42  \ud83e\udd41 86  \u2702\ufe0f 100\nhttps://perceptle.com",
+        "expected_game": "Perceptle",
+        "expected_data": 77
+    },
+    {
+        "message": "Perceptle #109 - S (97)\n\ud83d\udd22 99  \ud83c\udfaf 93  \ud83d\udcd0 100  \ud83e\udd41 92  \u2702\ufe0f 100\nhttps://perceptle.com",
+        "expected_game": "Perceptle",
+        "expected_data": 97
     }
 ]
