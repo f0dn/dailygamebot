@@ -1,4 +1,9 @@
+import importlib
+import inspect
+import json
+import re
 from abc import ABC
+from pathlib import Path
 from re import Pattern
 
 
@@ -30,22 +35,36 @@ class Game(ABC):
         return None
 
 
-from .chainle import Chainle
-from .dontwordle import DontWordle
-from .duotrigordle import Duotrigordle
-from .krillion import Krillion
-from .maptap import MapTap
-from .noillirk import Noillirk
-from .sedecordle import Sedecordle
-from .timeguessr import TimeGuessr
+def load_games() -> list[Game]:
+    games_path = Path(__file__).parent / "games.json"
+    with open(games_path, "r", encoding="utf-8") as f:
+        games_data = json.load(f)
 
-GAMES = [
-    Krillion(),
-    TimeGuessr(),
-    Sedecordle(),
-    MapTap(),
-    Duotrigordle(),
-    Chainle(),
-    DontWordle(),
-    Noillirk(),
-]
+    games = []
+    for game_data in games_data:
+        game_class = type(
+            game_data["name"],
+            (Game,),
+            {
+                "name": game_data["name"],
+                "regex": None
+                if game_data["regex"] is None
+                else re.compile(game_data["regex"]),
+                "reversed": game_data.get("reversed", False),
+                "url": game_data.get("url"),
+            },
+        )
+        games.append(game_class())
+
+    for path in Path(__file__).parent.glob("*.py"):
+        module_name = path.stem
+        if module_name in ("__init__", "__pycache__") or module_name.startswith("_"):
+            continue
+        module = importlib.import_module(f"{__package__}.{module_name}")
+        for _, obj in inspect.getmembers(module, inspect.isclass):
+            if issubclass(obj, Game) and obj is not Game:
+                games.append(obj())
+    return games
+
+
+GAMES = load_games()

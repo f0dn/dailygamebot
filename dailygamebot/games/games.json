@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Chainle",
+        "regex": "Chainle #\\d+ · ([\\d,]+)",
+        "url": "https://chainle.io"
+    },
+    {
+        "name": "Duotrigordle",
+        "regex": "Daily Duotrigordle #\\d+\nGuesses: (\\w+)/\\d+",
+        "url": "https://duotrigordle.com",
+        "reversed": true
+    },
+    {
+        "name": "Krillion",
+        "regex": "Krillion #\\d+.*\n(\\d+)",
+        "url": "https://krillion.io"
+    },
+    {
+        "name": "MapTap",
+        "regex": "www.maptap.gg .*\n.*\nFinal score: (\\d+)",
+        "url": "https://maptap.gg"
+    },
+    {
+        "name": "Noillirk",
+        "regex": "Noillirk - ([\\d,]+)m",
+        "url": "https://playdaily.org/noillirk"
+    },
+    {
+        "name": "Sedecordle",
+        "regex": "Daily Sedecordle #\\d+\nGuesses: (\\w+)/\\d+",
+        "url": "https://sedecordle.co",
+        "reversed": true
+    },
+    {
+        "name": "TimeGuessr",
+        "regex": "TimeGuessr #\\d+ — ([\\d,]+)/50,000",
+        "url": "https://timeguessr.com"
+    }
+]

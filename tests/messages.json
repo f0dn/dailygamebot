@@ -1,0 +1,57 @@
+[
+    {
+        "message": "Noillirk - 6,763m\nTHE THUNDERHEAD\n\n\ud83d\udfe5\ud83d\udfe8\ud83d\udfe8\ud83d\udfe5\u2b1b\u2b1c\ud83d\udfe8\n\nhttps://playdaily.org/noillirk",
+        "expected_game": "Noillirk",
+        "expected_data": 6763
+    },
+    {
+        "message": "Don't Wordle 1597 - SURVIVED\nHooray! I didn't Wordle today! I didn't even use a hint!\n\u2b1c\u2b1c\ud83d\udfe8\u2b1c\u2b1c1186\n\u2b1c\ud83d\udfe9\u2b1c\u2b1c\ud83d\udfe955\n\u2b1c\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe95\n\u2b1c\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe94\n\u2b1c\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe93\n\u2b1c\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe92\nUndos used: 3\n\n2 words remaining\nx 13 unused letters\n= 29 total score\n\nhttps://dontwordle.com",
+        "expected_game": "Don't Wordle",
+        "expected_data": 29
+    },
+    {
+        "message": "Don't Wordle 1596 - WORDLED\nI must admit that I Wordled!\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c7300\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c3821\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c1648\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c200\n\u2b1c\ud83d\udfe8\u2b1c\u2b1c\u2b1c10\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe90\nUndos used: 2\n\nhttps://dontwordle.com",
+        "expected_game": "Don't Wordle",
+        "expected_data": -1
+    },
+    {
+        "message": "Chainle #49 \u00b7 30 \ud83d\udd17\nBeat 95% of players\n\ud83d\udfe8\ud83d\udfe8\ud83d\udfe8\ud83d\udfe8\ud83d\udfe9\nchainle.io",
+        "expected_game": "Chainle",
+        "expected_data": 30
+    },
+    {
+        "message": "TimeGuessr #1224 \u2014 37,384/50,000\n\n1\ufe0f\u20e3 \ud83c\udfc66,134 \u00b7 \ud83d\udcc5 13y \u00b7 \ud83c\udf0d 227.4mi\n2\ufe0f\u20e3 \ud83c\udfc63,412 \u00b7 \ud83d\udcc5 7y \u00b7 \ud83c\udf0d 7665.3mi\n3\ufe0f\u20e3 \ud83c\udfc69,587 \u00b7 \ud83d\udcc5 3y \u00b7 \ud83c\udf0d 2121ft\n4\ufe0f\u20e3 \ud83c\udfc68,339 \u00b7 \ud83d\udcc5 7y \u00b7 \ud83c\udf0d 1.6mi\n5\ufe0f\u20e3 \ud83c\udfc69,912 \u00b7 \ud83d\udcc5 1y \u00b7 \ud83c\udf0d 3608ft\n\nhttps://timeguessr.com",
+        "expected_game": "TimeGuessr",
+        "expected_data": 37384
+    },
+    {
+        "message": "Daily Duotrigordle #1681\nGuesses: 35/37\n0\ufe0f\u20e34\ufe0f\u20e3 3\ufe0f\u20e33\ufe0f\u20e3 2\ufe0f\u20e34\ufe0f\u20e3 2\ufe0f\u20e35\ufe0f\u20e3\n1\ufe0f\u20e32\ufe0f\u20e3 2\ufe0f\u20e36\ufe0f\u20e3 2\ufe0f\u20e33\ufe0f\u20e3 1\ufe0f\u20e33\ufe0f\u20e3\n0\ufe0f\u20e35\ufe0f\u20e3 2\ufe0f\u20e37\ufe0f\u20e3 1\ufe0f\u20e35\ufe0f\u20e3 2\ufe0f\u20e32\ufe0f\u20e3\n1\ufe0f\u20e31\ufe0f\u20e3 0\ufe0f\u20e36\ufe0f\u20e3 1\ufe0f\u20e34\ufe0f\u20e3 0\ufe0f\u20e37\ufe0f\u20e3\n0\ufe0f\u20e39\ufe0f\u20e3 3\ufe0f\u20e32\ufe0f\u20e3 3\ufe0f\u20e35\ufe0f\u20e3 1\ufe0f\u20e30\ufe0f\u20e3\n2\ufe0f\u20e38\ufe0f\u20e3 0\ufe0f\u20e38\ufe0f\u20e3 1\ufe0f\u20e36\ufe0f\u20e3 1\ufe0f\u20e37\ufe0f\u20e3\n2\ufe0f\u20e39\ufe0f\u20e3 3\ufe0f\u20e34\ufe0f\u20e3 1\ufe0f\u20e39\ufe0f\u20e3 1\ufe0f\u20e38\ufe0f\u20e3\n2\ufe0f\u20e30\ufe0f\u20e3 3\ufe0f\u20e30\ufe0f\u20e3 3\ufe0f\u20e31\ufe0f\u20e3 2\ufe0f\u20e31\ufe0f\u20e3\nhttps://duotrigordle.com/",
+        "expected_game": "Duotrigordle",
+        "expected_data": 35
+    },
+    {
+        "message": "www.maptap.gg October 8\n96\ud83c\udfc5 92\ud83c\udfc6 84\ud83d\ude01 95\ud83c\udfc5 93\ud83c\udfc6\nFinal score: 920",
+        "expected_game": "MapTap",
+        "expected_data": 920
+    },
+    {
+        "message": "Krillion #82 \ud83e\udd90\n335\n\n\ud83c\udfee\ud83e\udee7\ud83d\udc1f\ud83d\udc1f\ud83e\udd91\ud83e\udd91\ud83e\udd91",
+        "expected_game": "Krillion",
+        "expected_data": 335
+    },
+    {
+        "message": "Daily Sedecordle #1678\nGuesses: 19/20\n1\ufe0f\u20e32\ufe0f\u20e3 0\ufe0f\u20e36\ufe0f\u20e3 1\ufe0f\u20e31\ufe0f\u20e3 1\ufe0f\u20e35\ufe0f\u20e3\n1\ufe0f\u20e36\ufe0f\u20e3 0\ufe0f\u20e35\ufe0f\u20e3 0\ufe0f\u20e34\ufe0f\u20e3 1\ufe0f\u20e37\ufe0f\u20e3\n1\ufe0f\u20e33\ufe0f\u20e3 0\ufe0f\u20e38\ufe0f\u20e3 0\ufe0f\u20e39\ufe0f\u20e3 0\ufe0f\u20e37\ufe0f\u20e3\n1\ufe0f\u20e39\ufe0f\u20e3 0\ufe0f\u20e31\ufe0f\u20e3 1\ufe0f\u20e30\ufe0f\u20e3 1\ufe0f\u20e38\ufe0f\u20e3\nhttps://sedecordle.co/",
+        "expected_game": "Sedecordle",
+        "expected_data": 19
+    },
+    {
+        "message": "Daily Sedecordle #1681\nGuesses: X/20\nTime: 06:12.09\n0\ufe0f\u20e36\ufe0f\u20e3 \ud83d\udfe5\ud83d\udfe5 0\ufe0f\u20e37\ufe0f\u20e3 1\ufe0f\u20e38\ufe0f\u20e3\n1\ufe0f\u20e37\ufe0f\u20e3 \ud83d\udfe5\ud83d\udfe5 0\ufe0f\u20e34\ufe0f\u20e3 1\ufe0f\u20e36\ufe0f\u20e3\n1\ufe0f\u20e31\ufe0f\u20e3 1\ufe0f\u20e34\ufe0f\u20e3 1\ufe0f\u20e35\ufe0f\u20e3 0\ufe0f\u20e35\ufe0f\u20e3\n1\ufe0f\u20e33\ufe0f\u20e3 0\ufe0f\u20e31\ufe0f\u20e3 0\ufe0f\u20e39\ufe0f\u20e3 1\ufe0f\u20e30\ufe0f\u20e3\nhttps://sedecordle.co/",
+        "expected_game": "Sedecordle",
+        "expected_data": -1
+    },
+    {
+        "message": "TimeGuessr #1252 \u2014 39,935/50,000\n\n1\ufe0f\u20e3 \ud83c\udfc69,749 \u00b7 \ud83d\udcc5 0y \u00b7 \ud83c\udf0d 29.3mi\n2\ufe0f\u20e3 \ud83c\udfc69,474 \u00b7 \ud83d\udcc5 4y \u00b7 \ud83c\udf0d 4211ft\n3\ufe0f\u20e3 \ud83c\udfc65,056 \u00b7 \ud83d\udcc5 16y \u00b7 \ud83c\udf0d 503.0mi\n4\ufe0f\u20e3 \ud83c\udfc69,259 \u00b7 \ud83d\udcc5 5y \u00b7 \ud83c\udf0d 191ft\n5\ufe0f\u20e3 \ud83c\udfc66,397 \u00b7 \ud83d\udcc5 19y \u00b7 \ud83c\udf0d 4951ft\n\nhttps://timeguessr.com",
+        "expected_game": "TimeGuessr",
+        "expected_data": 39935
+    }
+]
