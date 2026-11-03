@@ -22,7 +22,7 @@
     },
     {
         "name": "Noillirk",
-        "regex": "Noillirk - ([\\d,]+)m",
+        "regex": "Noillirk daily #\\d+ - ([\\d,]+)m",
         "url": "https://playdaily.org/noillirk"
     },
     {
