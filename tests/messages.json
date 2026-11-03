@@ -68,5 +68,15 @@
         "message": "Noillirk daily #37 - 7,363m\nTHE THUNDERHEAD\n\n\u2b1c\ud83d\udfe9\ud83d\udfe8\ud83d\udfe8\ud83d\udfe5\ud83d\udfe5\ud83d\udfe8\n\nhttps://playdaily.org/noillirk",
         "expected_game": "Noillirk",
         "expected_data": 7363
+    },
+    {
+        "message": "Songless #432\n\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\u2b1b\u2b1b [Top Hits]\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 [Pop]\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c [Rock]\n\ud83d\udfe5\ud83d\udfe9\u2b1b\u2b1b\u2b1b [Hip Hop]\n\u2b1c\u2b1c\u2b1c\ud83d\udfe9\u2b1b [EDM]\n\nPlay Today's Game: https://less.gg/songless",
+        "expected_game": "Songless",
+        "expected_data": 9
+    },
+    {
+        "message": "Songless #432\n\n\u2b1c\ud83d\udfe9\u2b1b\u2b1b\u2b1b [Top Hits]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [Pop]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [Rock]\n\u2b1c\ud83d\udfe9\u2b1b\u2b1b\u2b1b [Hip Hop]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [EDM]\n\nPlay Today's Game: https://less.gg/songless",
+        "expected_game": "Songless",
+        "expected_data": 8
     }
 ]
