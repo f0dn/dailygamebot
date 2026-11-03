@@ -2,7 +2,7 @@ import datetime
 import logging
 from zoneinfo import ZoneInfo
 
-from discord import Embed, Intents, Interaction, Member, TextChannel, User
+from discord import Embed, Intents, Interaction, Member, TextChannel, User, app_commands
 from discord.ext import commands, tasks
 
 from dailygamebot.games import GAMES, Game
@@ -22,7 +22,13 @@ def run(token: str):
     bot = commands.Bot(command_prefix="/", intents=intents)
 
     @bot.tree.command(description="Get a recap of the scores for today")
-    async def recap(interaction: Interaction):
+    @app_commands.choices(
+        game=[
+            app_commands.Choice(name=type(game).__name__, value=game.name)
+            for game in GAMES
+        ]
+    )
+    async def recap(interaction: Interaction, game: app_commands.Choice[str] | None = None):
         if interaction.guild is None:
             await interaction.response.send_message(
                 "This command can only be used in a server.", ephemeral=True
@@ -46,10 +52,10 @@ def run(token: str):
         LOGGER.info(
             f"Recap requested by {interaction.user} in {interaction.guild.name}"
         )
-        embed = await _recap(channel)
+        embed = await _recap(channel, game.value if game else None)
         await interaction.response.send_message(embed=embed)
 
-    async def _recap(channel: TextChannel) -> Embed:
+    async def _recap(channel: TextChannel, game_name: str | None = None) -> Embed:
         LOGGER.info(f"Starting recap task for {channel.guild.name}")
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
@@ -64,6 +70,8 @@ def run(token: str):
                 continue
             LOGGER.info(f"Processing message from {message.author}: {message.id}")
             for game in GAMES:
+                if game_name and game.name != game_name:
+                    continue
                 score = game.parse_score(message.content)
                 if score:
                     LOGGER.info(
@@ -86,6 +94,8 @@ def run(token: str):
                 message += f"{user.mention}: {score if score != -1 else 'X'}\n"
             message += "\n"
             LOGGER.info(f"Sending recap message to {channel.guild.name}")
+        if message == "":
+            message = "No scores found for today."
         return Embed(description=message.rstrip())
 
     @tasks.loop(time=MIDNIGHT)
