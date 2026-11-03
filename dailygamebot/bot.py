@@ -2,8 +2,8 @@ import datetime
 import logging
 from zoneinfo import ZoneInfo
 
-from discord import Client, Embed, Intents, Member, Message, TextChannel, User
-from discord.ext import tasks
+from discord import Embed, Intents, Interaction, Member, TextChannel, User
+from discord.ext import commands, tasks
 
 from dailygamebot.games import GAMES, Game
 
@@ -19,9 +19,37 @@ def run(token: str):
 
     channels: dict[int, TextChannel] = {}
 
-    client = Client(intents=intents)
+    bot = commands.Bot(command_prefix="/", intents=intents)
 
-    async def recap(channel: TextChannel):
+    @bot.tree.command(description="Get a recap of the scores for today")
+    async def recap(interaction: Interaction):
+        if interaction.guild is None:
+            await interaction.response.send_message(
+                "This command can only be used in a server.", ephemeral=True
+            )
+            return
+
+        if interaction.guild.id not in channels:
+            await interaction.response.send_message(
+                "No game-chat channel found for this server.", ephemeral=True
+            )
+            return
+
+        if interaction.channel != channels[interaction.guild.id]:
+            await interaction.response.send_message(
+                "This command can only be used in the game-chat channel.",
+                ephemeral=True,
+            )
+            return
+
+        channel = channels[interaction.guild.id]
+        LOGGER.info(
+            f"Recap requested by {interaction.user} in {interaction.guild.name}"
+        )
+        embed = await _recap(channel)
+        await interaction.response.send_message(embed=embed)
+
+    async def _recap(channel: TextChannel) -> Embed:
         LOGGER.info(f"Starting recap task for {channel.guild.name}")
         scores: dict[Game, dict[User | Member, int]] = {}
         async for message in channel.history(
@@ -32,9 +60,9 @@ def run(token: str):
             ),
             limit=None,
         ):
-            if message.author == client.user:
+            if message.author == bot.user:
                 continue
-            LOGGER.info(f"Processing message from {message.author}: {message.content}")
+            LOGGER.info(f"Processing message from {message.author}: {message.id}")
             for game in GAMES:
                 score = game.parse_score(message.content)
                 if score:
@@ -44,46 +72,34 @@ def run(token: str):
                     if game not in scores:
                         scores[game] = {}
                     scores[game][message.author] = score
+        message = ""
         for game, game_scores in scores.items():
             game_name = game.name
             if game.url:
                 game_name = f"[{game.name}]({game.url})"
-            message = f"Recap for {game_name}:\n"
+            message += f"Recap for {game_name}:\n"
             for user, score in sorted(
                 game_scores.items(),
                 key=lambda x: x[1],
                 reverse=not game.reversed,
             ):
                 message += f"{user.mention}: {score if score != -1 else 'X'}\n"
-            LOGGER.info(f"Sending recap message to {channel.guild.name}: {message}")
-            await channel.send(embed=Embed(description=message))
+            message += "\n"
+            LOGGER.info(f"Sending recap message to {channel.guild.name}")
+        return Embed(description=message.rstrip())
 
     @tasks.loop(time=MIDNIGHT)
     async def send_recap(channel: TextChannel | None = None):
         LOGGER.info("Starting daily recap task")
-        for guild in client.guilds:
+        for guild in bot.guilds:
             if guild.id in channels:
                 channel = channels[guild.id]
-                await recap(channel)
+                embed = await _recap(channel)
+                await channel.send(embed=embed)
 
-    @client.event
-    async def on_message(message: Message):
-        if message.author == client.user:
-            return
-
-        if not message.guild:
-            return
-
-        if message.content.startswith("!recap") and message.channel == channels.get(
-            message.guild.id
-        ):
-            LOGGER.info(f"Recap requested by {message.author} in {message.guild.name}")
-            channel = channels[message.guild.id]
-            await recap(channel)
-
-    @client.event
+    @bot.event
     async def on_ready():
-        for guild in client.guilds:
+        for guild in bot.guilds:
             for channel in guild.text_channels:
                 if channel.name == "game-chat":
                     LOGGER.info(
@@ -94,4 +110,9 @@ def run(token: str):
 
         send_recap.start()
 
-    client.run(token, root_logger=True)
+    @bot.event
+    async def setup_hook():
+        await bot.tree.sync()
+        LOGGER.info("Command tree synced globally")
+
+    bot.run(token, root_logger=True)
