@@ -40,5 +40,10 @@
         "name": "Perceptle",
         "regex": "Perceptle #\\d+ - . \\((\\d+)\\)",
         "url": "https://perceptle.com"
+    },
+    {
+        "name": "More/Less",
+        "regex": "More/Less #\\d+ — (\\d+)/25",
+        "url": "https://lessgames.com/moreless"
     }
 ]

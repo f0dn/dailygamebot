@@ -78,5 +78,15 @@
         "message": "Songless #432\n\n\u2b1c\ud83d\udfe9\u2b1b\u2b1b\u2b1b [Top Hits]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [Pop]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [Rock]\n\u2b1c\ud83d\udfe9\u2b1b\u2b1b\u2b1b [Hip Hop]\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c [EDM]\n\nPlay Today's Game: https://less.gg/songless",
         "expected_game": "Songless",
         "expected_data": 8
+    },
+    {
+        "message": "More/Less #434 \u2014 25/25\n\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Google Searches\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Spotify Streams\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Movie Ratings\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Prices\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Trivia\n\nPlay Today's Game: https://less.gg/moreless",
+        "expected_game": "More/Less",
+        "expected_data": 25
+    },
+    {
+        "message": "More/Less #434 \u2014 19/25\n\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Google Searches\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Spotify Streams\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9 Movie Ratings\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Prices\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Trivia\n\nPlay Today's Game: https://less.gg/moreless",
+        "expected_game": "More/Less",
+        "expected_data": 19
     }
 ]
