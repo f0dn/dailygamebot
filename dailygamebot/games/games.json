@@ -38,7 +38,7 @@
     },
     {
         "name": "Perceptle",
-        "regex": "Perceptle #\\d+ - . \\((\\d+)\\)",
+        "regex": "Perceptle #\\d+ .*- . \\((\\d+)\\)",
         "url": "https://perceptle.com"
     },
     {

@@ -88,5 +88,10 @@
         "message": "More/Less #434 \u2014 19/25\n\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Google Searches\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Spotify Streams\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9 Movie Ratings\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Prices\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Trivia\n\nPlay Today's Game: https://less.gg/moreless",
         "expected_game": "More/Less",
         "expected_data": 19
+    },
+    {
+        "message": "Perceptle #112 \ud83c\udccf - C (58)\n\ud83d\udd22 96  \ud83c\udfaf 0  \ud83d\udcd0 94  \ud83e\udd41 11  \u2702\ufe0f 90\nhttps://perceptle.com",
+        "expected_game": "Perceptle",
+        "expected_data": 58
     }
 ]
