@@ -65,5 +65,23 @@
         "name": "Size It Up",
         "regex": "Size It Up\n#\\d+\n\nScore: (\\d+)/500",
         "url": "https://magnitudle.com/size-it-up"
+    },
+    {
+        "name": "Squirdle",
+        "regex": "Squirdle (\\w)/9",
+        "url": "https://squirdle.fireblend.com",
+        "reversed": true
+    },
+    {
+        "name": "Minecraftle",
+        "regex": "Minecraftle \\d+-\\d+-\\d+ (\\w+)/10",
+        "url": "https://minecraftle.zachmanson.com",
+        "reversed": true
+    },
+    {
+        "name": "PokeGrid",
+        "regex": "(?s)PokeGrid \\d+ - \\d+/9.*\nRarity: (\\d+)",
+        "url": "https://pokegrid.net",
+        "reversed": true
     }
 ]
