@@ -168,5 +168,20 @@
         "message": "Spellcheck #1041\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\n\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9",
         "expected_game": "Spellcheck",
         "expected_data": 7
+    },
+    {
+        "message": "DEXIMILLION 2026-11-18 \ud83d\udd2e\n\u274c\u274c\u274c\u2705\nSolved on clue 4 \u00b7 25% chance \u00b7 caught it!\nhttps://pokemillion.com/",
+        "expected_game": "Deximillion",
+        "expected_data": 4
+    },
+    {
+        "message": "DEXIMILLION 2026-11-18 \ud83d\udd2e\n\u274c\u23ed\ufe0f\u23ed\ufe0f\u23ed\ufe0f\nIt got away\u2026\nhttps://pokemillion.com/",
+        "expected_game": "Deximillion",
+        "expected_data": -1
+    },
+    {
+        "message": "DEXIMILLION 2026-11-18 \ud83d\udd2e\n\u274c\u2705\nSolved on clue 2 \u00b7 75% chance \u00b7 caught it!\nhttps://pokemillion.com/",
+        "expected_game": "Deximillion",
+        "expected_data": 2
     }
 ]
