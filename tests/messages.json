@@ -158,5 +158,15 @@
         "message": "PokeGrid 1081 - 8/9\n\n\u3000 \u2694\ufe0f\ud83c\udf3f\ud83d\udcaa\n1\ufe0f\u20e3\ud83d\udd2e\ud83d\udd2e\ud83d\udfea\n\ud83e\udd4a\ud83d\udfea\u2b1c\ud83d\udfea\n2\ufe0f\u20e3\ud83d\udd2e\ud83d\udd2e\ud83d\udd2e\nRarity: 112\n\nhttps://pokegrid.net/",
         "expected_game": "PokeGrid",
         "expected_data": 112
+    },
+    {
+        "message": "Spellcheck #1041\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\n\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9",
+        "expected_game": "Spellcheck",
+        "expected_data": 10
+    },
+    {
+        "message": "Spellcheck #1041\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe5\n\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9",
+        "expected_game": "Spellcheck",
+        "expected_data": 7
     }
 ]
