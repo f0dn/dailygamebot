@@ -88,5 +88,40 @@
         "message": "More/Less #434 \u2014 19/25\n\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9 Google Searches\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Spotify Streams\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9 Movie Ratings\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Prices\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe5\ud83d\udfe9\ud83d\udfe9 Trivia\n\nPlay Today's Game: https://less.gg/moreless",
         "expected_game": "More/Less",
         "expected_data": 19
+    },
+    {
+        "message": "Krillocity \ud83e\udd90 The Daily Race \u00b7 No. 24 \u00b7 8,250m\n41 answers in 7 prompts\nHigher than 72.14% of racers today\n\nRace today's prompts: https://playdaily.org/krillocity",
+        "expected_game": "Krillocity",
+        "expected_data": 8250
+    },
+    {
+        "message": "Krillocity \ud83e\udd90 The Daily Race \u00b7 No. 24 \u00b7 11,250m\n46 answers in 7 prompts\nHigher than 91.53% of racers today\n\nRace today's prompts: https://playdaily.org/krillocity",
+        "expected_game": "Krillocity",
+        "expected_data": 11250
+    },
+    {
+        "message": "POK\u00c9MILLION Daily 20261118 \ud83d\udd34\u26aa\n\u2b1b\ud83d\udd34\u2b1b\u2b1b\u2b1b\ud83d\udd35\ud83d\udd35\nDistance: 135 m \u00b7 Youngster\nRarest find: Great Ball\nBetter than 2% of trainers\nhttps://pokemillion.com/",
+        "expected_game": "Pokemillion",
+        "expected_data": 135
+    },
+    {
+        "message": "POK\u00c9MILLION Daily 20261118 \ud83d\udd34\u26aa\n\ud83d\udfe1\ud83d\udfe1\u26ab\ud83d\udd34\ud83d\udd35\u26aa\u26aa\nDistance: 1,753 m \u00b7 Elite Four\nRarest find: Luxury Ball\nBetter than 95% of trainers\nhttps://pokemillion.com/",
+        "expected_game": "Pokemillion",
+        "expected_data": 1753
+    },
+    {
+        "message": "RNGdle \ud83c\udfb2 781225\n\n\ud83d\udfe6 RARE \u2022 Top 18%\n\n\ud83d\udfe6 \ud83e\ude99 Quarter-Century\n\ud83d\udfe9 \ud83e\udd1d Harshad Number\n\ud83d\udfe9 \ud83e\uddf9 Semi-Clean\n+12 more\n\n14,477 EP\nhttps://rngdle.com",
+        "expected_game": "RNGdle",
+        "expected_data": 14477
+    },
+    {
+        "message": "Size It Up\n#101\n\nScore: 351/500\n\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 67\n\ud83d\udfe5\u2b1c\u2b1c\u2b1c\u2b1c 19\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 66\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 99\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100\n\nhttps://magnitudle.com/size-it-up\nnew game \ud83d\ude03",
+        "expected_game": "Size It Up",
+        "expected_data": 351
+    },
+    {
+        "message": "Size It Up\n#101\n\nScore: 314/500\n\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 53\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c 7\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 66\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c 88\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100\n\nhttps://magnitudle.com/size-it-up",
+        "expected_game": "Size It Up",
+        "expected_data": 314
     }
 ]

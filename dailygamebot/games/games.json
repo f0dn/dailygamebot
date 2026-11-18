@@ -45,5 +45,25 @@
         "name": "More/Less",
         "regex": "More/Less #\\d+ — (\\d+)/25",
         "url": "https://lessgames.com/moreless"
+    },
+    {
+        "name": "Krillocity",
+        "regex": "Krillocity .* The Daily Race · No. \\d+ · ([\\d,]+)m",
+        "url": "https://playdaily.org/krillocity"
+    },
+    {
+        "name": "Pokemillion",
+        "regex": "POKÉMILLION Daily .*\n.*\nDistance: ([\\d,]+) m",
+        "url": "https://pokemillion.com"
+    },
+    {
+        "name": "RNGdle",
+        "regex": "(?s)RNGdle.*\n([\\d,]+) EP",
+        "url": "https://rngdle.com/"
+    },
+    {
+        "name": "Size It Up",
+        "regex": "Size It Up\n#\\d+\n\nScore: (\\d+)/500",
+        "url": "https://magnitudle.com/size-it-up"
     }
 ]
