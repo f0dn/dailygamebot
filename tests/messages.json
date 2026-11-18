@@ -123,5 +123,10 @@
         "message": "Size It Up\n#101\n\nScore: 314/500\n\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 53\n\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c 7\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c\u2b1c 66\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\u2b1c 88\n\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5\ud83d\udfe5 100\n\nhttps://magnitudle.com/size-it-up",
         "expected_game": "Size It Up",
         "expected_data": 314
+    },
+    {
+        "message": "Perceptle #112 \ud83c\udccf - C (58)\n\ud83d\udd22 96  \ud83c\udfaf 0  \ud83d\udcd0 94  \ud83e\udd41 11  \u2702\ufe0f 90\nhttps://perceptle.com",
+        "expected_game": "Perceptle",
+        "expected_data": 58
     }
 ]
