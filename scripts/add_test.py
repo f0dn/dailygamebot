@@ -28,7 +28,7 @@ def add_test():
     matched = False
     for game in GAMES:
         score = game.parse_score(message)
-        if score:
+        if score is not None:
             matched = True
             print(f"{game.name} parsed this message with a score of {score}")
             correct = input("Is this correct? (y/n): ")

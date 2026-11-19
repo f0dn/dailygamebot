@@ -183,5 +183,10 @@
         "message": "DEXIMILLION 2026-11-18 \ud83d\udd2e\n\u274c\u2705\nSolved on clue 2 \u00b7 75% chance \u00b7 caught it!\nhttps://pokemillion.com/",
         "expected_game": "Deximillion",
         "expected_data": 2
+    },
+    {
+        "message": "I solved Clueless #353 in 4\ufe0f\u20e32\ufe0f\u20e3 guesses with 0\ufe0f\u20e3 hints \ud83e\udd2f\nPlay Today's Game: https://less.gg/clueless",
+        "expected_game": "Clueless",
+        "expected_data": 42
     }
 ]

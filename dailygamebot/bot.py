@@ -73,7 +73,7 @@ def run(token: str):
                 if game_name and game.name != game_name:
                     continue
                 score = game.parse_score(message.content)
-                if score:
+                if score is not None:
                     LOGGER.info(
                         f"Found score for {game.name}: {score} from {message.author}"
                     )
